@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@react-monorepo-nx/ui": ["ui/src/index.ts"],
+      "@rmn/even": ["apps/frontend/even/src/index.ts"],
       "@rmn/odd": ["apps/frontend/odd/src/index.ts"]
     }
   },
