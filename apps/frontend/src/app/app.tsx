@@ -5,6 +5,7 @@ import NxWelcome from './nx-welcome';
 import { Route, Routes, Link } from 'react-router-dom';
 
 import {FrontendOdd} from '@rmn/odd';
+import {FrontendEven} from '@rmn/even';
 
 export function App() {
   return (
@@ -20,6 +21,9 @@ export function App() {
           </li>
           <li>
             <Link to="/odd">Odd lib</Link>
+          </li>
+          <li>
+            <Link to="/even">Even lib</Link>
           </li>
         </ul>
       </nav>
@@ -39,6 +43,15 @@ export function App() {
             <div>
               <Link to="/">Click here to go back to root page.</Link>
               <FrontendOdd/>
+            </div>
+          }
+        />
+        <Route
+          path="/even"
+          element={
+            <div>
+              <Link to="/">Click here to go back to root page.</Link>
+              <FrontendEven/>
             </div>
           }
         />
