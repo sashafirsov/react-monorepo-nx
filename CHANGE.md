@@ -1,5 +1,11 @@
 
- Created `frontend` app by [react/application generator](https://nx.dev/nx-api/react/generators/application)
+Created `even` lib iside of `frontend`
+    yarn nx g @nx/react:library even --bundler=vite --appProject=frontend --component --compiler=swc --importPath=@rmn/even --directory=apps/frontend --projectNameAndRootFormat=derived --dry-run
+
+Created `odd` lib iside of `frontend`
+    yarn nx g @nx/react:library odd --bundler=vite --appProject=frontend --component --compiler=swc --importPath=@rmn/odd --directory=apps/frontend --projectNameAndRootFormat=derived --dry-run
+
+Created `frontend` app by [react/application generator](https://nx.dev/nx-api/react/generators/application)
     yarn nx g app frontend --routing --bundler=vite --compiler=swc --e2eTestRunner=playwright --projectNameAndRootFormat=derived --strict --unitTestRunner=vitest --dry-run
 
 
