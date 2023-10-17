@@ -3,16 +3,17 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build":"yarn nx dun react-monorepo-nx:build",
-    "test":"yarn nx test ui",
-    "graph":"yarn nx graph",
+    "build": "yarn nx dun react-monorepo-nx:build",
+    "test": "yarn nx test ui",
+    "graph": "yarn nx graph",
     "dev": "yarn nx serve react-monorepo-nx"
   },
   "private": true,
   "dependencies": {
     "@swc/helpers": "~0.5.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.11.2"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
@@ -36,6 +37,7 @@
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "@vitejs/plugin-react": "~4.0.0",
+    "@vitejs/plugin-react-swc": "~3.3.2",
     "@vitest/coverage-c8": "~0.32.0",
     "@vitest/ui": "~0.32.0",
     "eslint": "~8.46.0",
