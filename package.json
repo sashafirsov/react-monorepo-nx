@@ -2,7 +2,12 @@
   "name": "@react-monorepo-nx/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build":"yarn nx dun react-monorepo-nx:build",
+    "test":"yarn nx test ui",
+    "graph":"yarn nx graph",
+    "dev": "yarn nx serve react-monorepo-nx"
+  },
   "private": true,
   "dependencies": {
     "@swc/helpers": "~0.5.2",
