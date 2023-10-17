@@ -1,4 +1,6 @@
 
+`odd` and `even` lazy load with `Suspense` fallback. 
+
 
 Created `shared` lib iside of `frontend`
     yarn nx g @nx/react:library shared --bundler=vite --appProject=frontend --component --compiler=swc --importPath=@rmn/shared  --projectNameAndRootFormat=derived --dry-run
