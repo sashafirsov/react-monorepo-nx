@@ -4,8 +4,21 @@ import NxWelcome from './nx-welcome';
 
 import { Route, Routes, Link } from 'react-router-dom';
 
-import {FrontendOdd} from '@rmn/odd';
-import {FrontendEven} from '@rmn/even';
+// import FrontendOdd from '@rmn/odd';
+// import FrontendEven from '@rmn/even';
+
+import { lazy, Suspense } from 'react';
+
+const FrontendEven = lazy(
+  () => import('@rmn/even')//.then(module => ({ default: module.FrontendEven }))
+);
+const FrontendOdd = lazy(
+  () => import('@rmn/odd')//.then(module => ({ default: module.FrontendOdd }))
+);
+
+function Loading() {
+  return <h2>🌀 Loading...</h2>;
+}
 
 export function App() {
   return (
@@ -42,7 +55,9 @@ export function App() {
           element={
             <div>
               <Link to="/">Click here to go back to root page.</Link>
-              <FrontendOdd/>
+              <Suspense fallback={<Loading />}>
+                <FrontendOdd/>
+              </Suspense>
             </div>
           }
         />
@@ -51,7 +66,9 @@ export function App() {
           element={
             <div>
               <Link to="/">Click here to go back to root page.</Link>
-              <FrontendEven/>
+              <Suspense fallback={<Loading />}>
+                <FrontendEven/>
+              </Suspense>
             </div>
           }
         />

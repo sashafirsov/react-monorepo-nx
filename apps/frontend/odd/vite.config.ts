@@ -25,16 +25,16 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    entry: 'src/index.ts',
-    name: 'frontend-odd',
-    fileName: 'index',
-    formats: ['es', 'cjs'],
-    external: ['react', 'react-dom', 'react/jsx-runtime'],
+    // entry: 'src/index.ts',
+    // name: 'frontend-odd',
+    // fileName: 'index',
+    // formats: ['es', 'mjs'],
+    // external: ['react', 'react-dom', 'react/jsx-runtime'],
     lib: {
       entry: 'src/index.ts',
       name: 'frontend-odd',
       fileName: 'index',
-      formats: ['es', 'cjs'],
+      formats: ['es'],
     },
     rollupOptions: {
       external: ["'react'", "'react-dom'", "'react/jsx-runtime'"],
