@@ -11,7 +11,8 @@
             ],
             "defaultConfiguration": "production",
             "options": {
-                "outputPath": "dist/apps/frontend"
+                "outputPath": "dist/apps/frontend",
+                "target": "esnext"
             },
             "configurations": {
                 "development": {
@@ -30,8 +31,9 @@
             "defaultConfiguration": "development",
             "options": {
                 "outputPath": "dist/apps/frontend-esm",
+                "configFile": "apps/frontend/vite-unbundled.config.ts",
                 "target": "esnext",
-                "sourcemap": true
+                "sourcemap": false
             },
             "configurations": {
                 "development": {
