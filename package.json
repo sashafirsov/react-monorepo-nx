@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "yarn nx run react-monorepo-nx:build",
+    "build": "yarn nx run frontend:build",
     "test": "yarn nx test ui",
     "graph": "yarn nx graph",
-    "dev": "yarn nx serve frontend"
+    "dev": "yarn nx serve frontend",
+    "prod": "yarn build && cd dist/apps/frontend && npx http-server -o ."
   },
   "private": true,
   "dependencies": {
