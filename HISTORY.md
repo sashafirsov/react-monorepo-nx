@@ -1,3 +1,7 @@
+LF as default. [.gitattributes](.gitattributes) and
+    git config core.eol lf
+    git config core.autocrlf input
+
 
 `odd` and `even` lazy load with `Suspense` fallback. 
 

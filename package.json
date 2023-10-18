@@ -4,9 +4,12 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn nx run frontend:build",
+    "unbundle": "yarn nx run frontend:unbundle:development",
     "test": "yarn nx test ui",
     "graph": "yarn nx graph",
     "dev": "yarn nx serve frontend",
+    "preview": "yarn build && yarn nx preview frontend",
+    "preview:help": "echo run release build and start web server ",
     "prod": "yarn build && cd dist/apps/frontend && npx http-server -o ."
   },
   "private": true,
