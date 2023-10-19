@@ -9,7 +9,7 @@
 Generated `lorem-generator`
     yarn add -D @nx/plugin@latest
     yarn nx g @nx/plugin:plugin plugins
-    yarn nx generate generator lorem-generator --project=plugins
+    yarn nx generate generator lorem-generator --project=plugins # derived option
 
 Upgraded Nx to latest
     yarn nx migrate latest

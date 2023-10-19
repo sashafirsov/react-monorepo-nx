@@ -1,0 +1,9 @@
+{
+    "generators": {
+        "lorem-generator": {
+            "factory": "./src/generators/lorem-generator/generator",
+            "schema": "./src/generators/lorem-generator/schema.json",
+            "description": "lorem-generator generator"
+        }
+    }
+}
