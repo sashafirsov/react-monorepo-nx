@@ -1785,6 +1785,11 @@
     node-addon-api "^3.2.1"
     node-gyp-build "^4.3.0"
 
+"@pdftron/webviewer@^10.4.0":
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/@pdftron/webviewer/-/webviewer-10.4.0.tgz#9f59c38f0ec1b7cc08d446ca1a9abc94aa549c41"
+  integrity sha512-aJOuAYEnkxn/tCaB1m548VfxILbBesLB7Fd1S15/KvjklM9nCQjwJv4+R99zL+WaxvVet9kem5LVPoiGXDHXmg==
+
 "@phenomnomnominal/tsquery@~5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@phenomnomnominal/tsquery/-/tsquery-5.0.1.tgz#a2a5abc89f92c01562a32806655817516653a388"
