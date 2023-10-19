@@ -10,7 +10,8 @@
     "dev": "yarn nx serve frontend",
     "preview": "yarn build && yarn nx preview frontend",
     "preview:help": "echo run release build and start web server ",
-    "prod": "yarn build && cd dist/apps/frontend && npx http-server -o ."
+    "prod": "yarn build && cd dist/apps/frontend && npx http-server -o .",
+    "esm": "yarn unbundle && cd dist/apps/frontend-esm && npx http-server -o ."
   },
   "private": true,
   "dependencies": {
