@@ -15,7 +15,7 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@react-monorepo-nx/plugins": ["plugins/src/index.ts"],
+            "@react-monorepo-nx/plugins": ["tools/nxplugins/src/index.ts"],
             "@react-monorepo-nx/ui": ["ui/src/index.ts"],
             "@rmn/even": ["apps/frontend/even/src/index.ts"],
             "@rmn/odd": ["apps/frontend/odd/src/index.ts"],

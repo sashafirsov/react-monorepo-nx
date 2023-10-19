@@ -66,6 +66,9 @@
                 "linter": "eslint",
                 "unitTestRunner": "vitest"
             }
+        },
+        "@nx/workspace:move": {
+            "projectNameAndRootFormat": "as-provided"
         }
     }
 }
