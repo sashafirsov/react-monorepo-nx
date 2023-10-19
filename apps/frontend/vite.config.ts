@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
-export default defineConfig({
+export const configObj = {
     cacheDir: '../../node_modules/.vite/frontend',
 
     server: {
@@ -28,4 +28,6 @@ export default defineConfig({
     //   environment: 'jsdom',
     //   include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     // },
-});
+};
+
+export default defineConfig(configObj);
