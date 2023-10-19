@@ -5,6 +5,11 @@ Based on  [Nx](https://nx.dev/) and [ViteJs](https://vitejs.dev/) based monorepo
 
 In this project only React stack is evaluated with the goal of mixing TypeScript and Rust sources and targets.
 
+# Quick start
+    yarn
+    yarn dev # to run in dev mode
+    yarn prod # run bundled production build
+    yarn esm # run unbundled CDN build
 
 # Directory
 * [HISTORY.md](HISTORY.md) - the history of changes.

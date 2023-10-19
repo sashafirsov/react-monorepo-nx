@@ -8,6 +8,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 // import FrontendEven from '@rmn/even';
 
 import { lazy, Suspense } from 'react';
+import { Loading } from "@rmn/shared";
 
 const FrontendEven = lazy(
   () => import('@rmn/even')//.then(module => ({ default: module.FrontendEven }))
@@ -16,14 +17,11 @@ const FrontendOdd = lazy(
   () => import('@rmn/odd')//.then(module => ({ default: module.FrontendOdd }))
 );
 
-function Loading() {
-  return <h2>🌀 Loading...</h2>;
-}
+
 
 export function App() {
   return (
-    <main className={styles.main}>  
-
+    <main className={styles.main}>
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
       {/* Feel free to move and update them to fit your needs */}
