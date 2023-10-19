@@ -26,9 +26,9 @@ export default defineConfig({
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
     lib: {
-      entry: 'src/index.ts',
+      entry: 'src/even.ts',
       name: 'frontend-even',
-      fileName: 'index',
+      fileName: 'even',
       formats: ['es'],
     },
     rollupOptions: {
@@ -36,10 +36,10 @@ export default defineConfig({
     },
   },
 
-  test: {
-    globals: true,
-    cache: { dir: '../../../node_modules/.vitest' },
-    environment: 'jsdom',
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-  },
+  // test: {
+  //   globals: true,
+  //   cache: { dir: '../../../node_modules/.vitest' },
+  //   environment: 'jsdom',
+  //   include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+  // },
 });

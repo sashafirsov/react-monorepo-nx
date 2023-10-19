@@ -1,12 +1,13 @@
 {
   "name": "@rmn/even",
   "version": "0.0.1",
-  "main": "./index.js",
-  "types": "./index.d.ts",
+  "browser": "./even.js",
+  "main": "./even.js",
+  "types": "./even.d.ts",
   "exports": {
     ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
+      "import": "./even.mjs",
+      "require": "./even.js"
     }
   },
   "dependencies": {
