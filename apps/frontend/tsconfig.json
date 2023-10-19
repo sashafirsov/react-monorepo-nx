@@ -9,6 +9,7 @@
   },
   "files": [],
   "include": [],
+  "exclude": ["public/**/*"],
   "references": [
     {
       "path": "./tsconfig.app.json"
