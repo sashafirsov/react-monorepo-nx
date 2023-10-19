@@ -3,7 +3,9 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "build": "yarn nx run frontend:build",
+        "build": "yarn nx affected --target=build #buuild only changed",
+        "build:frontend": "yarn nx run frontend:build",
+        "build:all": "yarn nx run-many --target=build --all",
         "unbundle": "yarn nx run frontend:unbundle:development",
         "test": "yarn nx test ui",
         "graph": "yarn nx graph",

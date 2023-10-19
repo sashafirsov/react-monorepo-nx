@@ -6,6 +6,9 @@
 * storybook
 
 # DONE
+Generator `lorem-generator` moved to `tools/nxplugins`
+    yarn nx g mv --project plugins --destination tools/nxplugins
+
 Generated `lorem-generator`
     yarn add -D @nx/plugin@latest
     yarn nx g @nx/plugin:plugin plugins
