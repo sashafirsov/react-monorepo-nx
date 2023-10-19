@@ -6,6 +6,16 @@
 * storybook
 
 # DONE
+Generated `lorem-generator`
+    yarn add -D @nx/plugin@latest
+    yarn nx g @nx/plugin:plugin plugins
+    yarn nx generate generator lorem-generator --project=plugins
+
+Upgraded Nx to latest
+    yarn nx migrate latest
+    yarn
+    yarn nx migrate --run-migrations
+
 Excluded `apps/frontend/public/pdf` from eslint and ts config as 3rd party libs which are not subject for change/analyze.
 
 PdfView based on `@pdftron/webviewer` added as a sample of heavy 3rd party lib with lots of static files 
