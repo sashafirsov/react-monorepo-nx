@@ -20,13 +20,13 @@ LF as default. [.gitattributes](.gitattributes) and
 `odd` and `even` lazy load with `Suspense` fallback. 
 
 
-Created `shared` lib iside of `frontend`
+Created `shared` lib inside of `frontend`
     yarn nx g @nx/react:library shared --bundler=vite --appProject=frontend --component --compiler=swc --importPath=@rmn/shared  --projectNameAndRootFormat=derived --dry-run
 
-Created `even` lib iside of `frontend`
+Created `even` lib inside of `frontend`
     yarn nx g @nx/react:library even --bundler=vite --appProject=frontend --component --compiler=swc --importPath=@rmn/even --directory=apps/frontend --projectNameAndRootFormat=derived --dry-run
 
-Created `odd` lib iside of `frontend`
+Created `odd` lib inside of `frontend`
     yarn nx g @nx/react:library odd --bundler=vite --appProject=frontend --component --compiler=swc --importPath=@rmn/odd --directory=apps/frontend --projectNameAndRootFormat=derived --dry-run
 
 Created `frontend` app by [react/application generator](https://nx.dev/nx-api/react/generators/application)
@@ -35,5 +35,5 @@ Created `frontend` app by [react/application generator](https://nx.dev/nx-api/re
  Added UI component
     npx nx g @nx/react:lib ui
 
-Following nx-recipes/[react-monorepo](https://github.com/nrwl/nx-recipes/tree/main/react-monorepo) bootstrap  rpoject with 
+Following nx-recipes/[react-monorepo](https://github.com/nrwl/nx-recipes/tree/main/react-monorepo) bootstrap  project with 
     npx create-nx-workspace@latest react-monorepo-nx --preset=react-monorepo
