@@ -28,8 +28,7 @@
             "x-prompt": "What text to inject into the component? Would be generate ",
             "x-prompt": "What text to inject into the component? Would be generated if leave blank ",
             "$default": {
-                "$source": "argv",
-                "index": 2
+
             }
         }
     },

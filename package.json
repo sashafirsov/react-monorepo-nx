@@ -1,20 +1,25 @@
 {
     "name": "@react-monorepo-nx/source",
     "version": "0.0.0",
-    "license": "MIT",
     "scripts": {
+        "clean": "rm -rf apps/frontend/odd/src/lib/lorem_* && rm -rf apps/frontend/even/src/lib/lorem_* && rm -rf apps/shared/src/lib/lorem_*",
         "build": "yarn nx affected --target=build #buuild only changed",
         "build:frontend": "yarn nx run frontend:build",
         "build:all": "yarn nx run-many --target=build --all",
         "unbundle": "yarn nx run frontend:unbundle:development",
-        "test": "yarn nx test ui",
+        "test": "yarn nx run-many --target=test --all",
+        "test:plugins": "yarn nx run plugins:test --skip-nx-cache",
+        "postinstall": "yarn lorem",
         "graph": "yarn nx graph",
         "dev": "yarn nx serve frontend",
         "preview": "yarn build && yarn nx preview frontend",
         "preview:help": "echo run release build and start web server ",
         "prod": "yarn build && cd dist/apps/frontend && npx http-server -o .",
         "esm": "yarn unbundle && cd dist/apps/frontend-esm && npx http-server -o .",
-        "lorem": "yarn nx g lorem-generator lorem shared  \"Hello World!\" --dry-run"
+        "lorem": "yarn lorem:shared && yarn lorem:even && yarn lorem:odd",
+        "lorem:shared": "yarn nx g lorem-generator lorem shared  --text=\"\"",
+        "lorem:even": "yarn nx g lorem-generator lorem frontend-even  --text=\"\"",
+        "lorem:odd": "yarn nx g lorem-generator lorem frontend-odd  --text=\"\""
     },
     "private": true,
     "dependencies": {
