@@ -21,9 +21,11 @@ export async function loremGeneratorGenerator(
             return
         for (const i0 of [0, 1, 2]) {
             const name= `${parentName}_${i0}`;
+            const text = options.text || "TBD GENERATED";
             generateFiles(tree, path.join(__dirname, 'files'), sourceRoot+'/lib'+srcPath, {
                 ...options,
                 name,
+                text
             });
             generateLayer( name,depth+1,`${srcPath}/${name}`)
         }

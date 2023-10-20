@@ -25,7 +25,8 @@
         "text": {
             "type": "string",
             "description": "string content within component",
-            "x-prompt": "What text to inject into the component?",
+            "x-prompt": "What text to inject into the component? Would be generate ",
+            "x-prompt": "What text to inject into the component? Would be generated if leave blank ",
             "$default": {
                 "$source": "argv",
                 "index": 2
