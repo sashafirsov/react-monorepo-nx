@@ -19,19 +19,20 @@ export async function loremGeneratorGenerator(
     const lorem = new LoremIpsum({
         sentencesPerParagraph: {
             max: 8,
-            min: 4
+            min: 5
         },
         wordsPerSentence: {
             max: 16,
-            min: 4
+            min: 5
         }
     });
-    const generateLayer = (parentName = options.name, depth=0, srcPath='') => {
-        if( depth>2)
+    const maxDepth = options.depth || 4;
+    const generateLayer = (parentName :string, depth:number, srcPath:string) => {
+        if( depth>maxDepth)
             return
         for (const i0 of [0, 1, 2]) {
             const name= `${parentName}_${i0}`;
-            const text = options.text || lorem.generateParagraphs(16);
+            const text = options.text || lorem.generateParagraphs(options.paragraphs || 20);
             generateFiles(tree, path.join(__dirname, 'files'), sourceRoot+'/lib'+srcPath, {
                 ...options,
                 name,
@@ -40,7 +41,7 @@ export async function loremGeneratorGenerator(
             generateLayer( name,depth+1,`${srcPath}/${name}`)
         }
     };
-    generateLayer();
+    generateLayer(options.name, 0, '');
 
     await formatFiles(tree);
 }

@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/schema",
     "$id": "LoremGenerator",
-    "title": "",
+    "title": "Lorem_xxx components tree generator",
     "type": "object",
     "properties": {
         "name": {
@@ -11,7 +11,7 @@
                 "$source": "argv",
                 "index": 0
             },
-            "x-prompt": "What component name would you like to use?"
+            "x-prompt": "What component file/dir name prefix would you like to use?"
         },
         "project": {
             "type": "string",
@@ -24,13 +24,22 @@
         },
         "text": {
             "type": "string",
-            "description": "string content within component",
-            "x-prompt": "What text to inject into the component? Would be generate ",
-            "x-prompt": "What text to inject into the component? Would be generated if leave blank ",
-            "$default": {
-
-            }
+            "description": "String content within component. Lorem ipsum text would be generated if leave blank",
+            "x-prompt": "What text to inject into the component?  ",
+            "default": ""
+        },
+        "depth": {
+            "type": "number",
+            "description": "lorem components dependencies tree depth",
+            "x-prompt": "what max inclusion level for lorem components dependencies tree",
+            "default": 4
+        },
+        "paragraphs": {
+            "type": "number",
+            "description": "Number of paragraphs in lorem ipsum generated text. It defines the source size of single component",
+            "x-prompt": "How many  lorem ipsum paragraphs to generate in component text",
+            "default": 16
         }
     },
-    "required": ["name"]
+    "required": ["name", "project"]
 }

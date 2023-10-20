@@ -2,7 +2,7 @@
     "name": "@react-monorepo-nx/source",
     "version": "0.0.0",
     "scripts": {
-        "clean": "rm -rf apps/frontend/odd/src/lib/lorem_* && rm -rf apps/frontend/even/src/lib/lorem_* && rm -rf apps/shared/src/lib/lorem_*",
+        "clean": "rm -rf apps/frontend/odd/src/lib/lorem_* && rm -rf apps/frontend/even/src/lib/lorem_* && rm -rf shared/src/lib/lorem_*",
         "build": "yarn nx affected --target=build #buuild only changed",
         "build:frontend": "yarn nx run frontend:build",
         "build:all": "yarn nx run-many --target=build --all",
@@ -16,10 +16,10 @@
         "preview:help": "echo run release build and start web server ",
         "prod": "yarn build && cd dist/apps/frontend && npx http-server -o .",
         "esm": "yarn unbundle && cd dist/apps/frontend-esm && npx http-server -o .",
-        "lorem": "yarn lorem:shared && yarn lorem:even && yarn lorem:odd",
-        "lorem:shared": "yarn nx g lorem-generator lorem shared  --text=\"\"",
-        "lorem:even": "yarn nx g lorem-generator lorem frontend-even  --text=\"\"",
-        "lorem:odd": "yarn nx g lorem-generator lorem frontend-odd  --text=\"\""
+        "lorem": "yarn clean; [ -z \"$LOREM_DEPTH\" ] && export LOREM_DEPTH=4; [ -z \"$LOREM_PARAGRAPHS\" ] && export LOREM_PARAGRAPHS=20; yarn lorem:shared && yarn lorem:even && yarn lorem:odd",
+        "lorem:shared": "yarn nx g lorem-generator lorem shared --depth=$LOREM_DEPTH --paragraphs=$LOREM_PARAGRAPHS --text=\"\"",
+        "lorem:even": "yarn nx g lorem-generator lorem frontend-even  --depth=$LOREM_DEPTH --paragraphs=$LOREM_PARAGRAPHS   --text=\"\"",
+        "lorem:odd": "yarn nx g lorem-generator lorem frontend-odd  --depth=$LOREM_DEPTH --paragraphs=$LOREM_PARAGRAPHS   --text=\"\""
     },
     "private": true,
     "dependencies": {
