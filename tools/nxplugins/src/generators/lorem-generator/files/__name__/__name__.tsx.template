@@ -11,15 +11,17 @@ const strContent = `<%= text %>`;
 export interface Lorem_<%= name %>Props {}
 
 export const Lorem_<%= name %> = (_props: Lorem_<%= name %>Props)=>(
-  <div className={styles.container}>
-    {projVar}-{nameVar}
-    <i className={styles['lorem-ipsum']}>{strContent}</i>
-    {/* eslint-disable-next-line react/jsx-pascal-case */}
-    <Lorem_<%= name %>_0 />
-    {/* eslint-disable-next-line react/jsx-pascal-case */}
-    <Lorem_<%= name %>_1 />
-    {/* eslint-disable-next-line react/jsx-pascal-case */}
-    <Lorem_<%= name %>_2 />
-  </div>);
+  <details className={styles.container} open>
+    <summary>{projVar}-{nameVar}</summary>
+    <var className={styles['lorem-ipsum']}>{strContent}</var>
+    <section>
+        {/* eslint-disable-next-line react/jsx-pascal-case */}
+        <Lorem_<%= name %>_0 />
+        {/* eslint-disable-next-line react/jsx-pascal-case */}
+        <Lorem_<%= name %>_1 />
+        {/* eslint-disable-next-line react/jsx-pascal-case */}
+        <Lorem_<%= name %>_2 />
+    </section>
+  </details>);
 
 export default Lorem_<%= name %>;

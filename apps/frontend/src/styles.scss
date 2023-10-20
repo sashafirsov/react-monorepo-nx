@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+var { display: block; max-height: 8em; overflow: scroll; max-width: 16em;}
+details>summary{ display: revert; }
+details section{ display: flex; flex-wrap: wrap; gap: 1rem; }
