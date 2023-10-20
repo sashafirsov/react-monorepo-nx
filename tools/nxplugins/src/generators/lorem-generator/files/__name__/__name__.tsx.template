@@ -5,7 +5,7 @@ import Lorem_<%= name %>_2 from './<%= name %>_2/<%= name %>_2';
 
 const nameVar = "<%= name %>";
 const projVar = "<%= project %>";
-const strContent = "<%= text %>";
+const strContent = `<%= text %>`;
 
 /* eslint-disable-next-line */
 export interface Lorem_<%= name %>Props {}
