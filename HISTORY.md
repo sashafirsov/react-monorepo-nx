@@ -6,6 +6,11 @@
 * storybook
 
 # DONE
+
+
+Generate lorem command
+yarn nx g lorem-generator lorem shared  "Hello World!"
+
 Generator `lorem-generator` moved to `tools/nxplugins`
     yarn nx g mv --project plugins --destination tools/nxplugins
 

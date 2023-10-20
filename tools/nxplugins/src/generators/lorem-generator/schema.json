@@ -6,12 +6,30 @@
     "properties": {
         "name": {
             "type": "string",
-            "description": "",
+            "description": "component name",
             "$default": {
                 "$source": "argv",
                 "index": 0
             },
-            "x-prompt": "What name would you like to use?"
+            "x-prompt": "What component name would you like to use?"
+        },
+        "project": {
+            "type": "string",
+            "description": "project for component",
+            "x-prompt": "What project to add the component?",
+            "$default": {
+                "$source": "argv",
+                "index": 1
+            }
+        },
+        "text": {
+            "type": "string",
+            "description": "string content within component",
+            "x-prompt": "What text to inject into the component?",
+            "$default": {
+                "$source": "argv",
+                "index": 2
+            }
         }
     },
     "required": ["name"]

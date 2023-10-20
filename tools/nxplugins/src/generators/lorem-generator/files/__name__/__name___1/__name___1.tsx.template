@@ -1,0 +1,6 @@
+const nameVar = "<%= name %>_1";
+const projVar = "<%= project %>";
+const strContent = "<%= text %>";
+export const Lorem_<%= name %>_1 = ()=>(<div>{projVar}-{nameVar}-{strContent}</div>);
+
+export default Lorem_<%= name %>_1;
