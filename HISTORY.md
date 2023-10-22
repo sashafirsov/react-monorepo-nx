@@ -2,11 +2,15 @@
 * change odd/even js entry files/bundle names
 * tree shaking. Add heavy lib to `odd` with single api call, not a lazy case.
 * linter main command
-* seed 5K TS files of 6K each 
 * storybook
 
 # DONE
 
+enable relative paths within CDN deployment
+* HashRouter
+* html base set to ./
+* PdfView base set to ./
+* viteconfig base set to blank
 
 Generate lorem command
 yarn nx g lorem-generator lorem shared  "Hello World!"
