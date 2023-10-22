@@ -2,8 +2,12 @@
 .main { display: flex; flex-wrap: wrap;}
 .nav {
     flex: 1 100%;
-    a{ color: darkblue; font-weight: bold; }
+    a{ color: darkblue; font-weight: bold; margin-left: 0.5rem;}
     li{ list-style: none; }
     ul{ display: flex; gap: 2rem; padding: 0; }
+    section { color: white; background: hsla(214, 62%, 21%, 1);
+        padding: 1rem;
+        a{ color: #33aaff; }
+    }
 }
 

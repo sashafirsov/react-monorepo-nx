@@ -1,6 +1,6 @@
 # generated modules
-lorem*/
-lorem*.*
+/apps/**/lorem*/
+/shared/**/lorem*/
 
 # https://docs.npmjs.com/cli/v10/commands/npm-publish
 # See http://help.github.com/ignore-files/ for more about ignoring files.

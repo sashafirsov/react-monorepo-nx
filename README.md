@@ -4,6 +4,14 @@ To evaluate and compare the bundled and unbundled builds on large codebase.
 Based on  [Nx](https://nx.dev/) and [ViteJs](https://vitejs.dev/) based monorepo build toolchain.
 
 In this project only React stack is evaluated with the goal of mixing TypeScript and Rust sources and targets.
+# CDN live demo
+* [bundled](https://unpkg.com/@suns/react-monorepo-nx@0.0.2/dist/apps/frontend/index.html)
+* [unbundled](https://unpkg.com/@suns/react-monorepo-nx@0.0.2/dist/apps/frontend-esm/index.html)
+
+The page immediate dependencies load are meant only for bundle splitting samples.
+
+To see the difference between unbundled and bundled distributions, within the `odd` or `even`, 
+click on `toggle lorem tree` to trigger the 3Mb of components loaded. 
 
 # Quick start
     yarn
