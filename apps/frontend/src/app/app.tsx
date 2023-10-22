@@ -28,15 +28,16 @@ export function App() {
       <nav role="navigation" className={styles.nav}>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Home</Link> | <a href="https://github.com/sashafirsov/react-monorepo-nx">Git</a>
           </li>
           <li>
-            <Link to="/odd">Odd lib</Link>
+            <Link to="/odd">Odd lib</Link> own and shared tree
           </li>
           <li>
-            <Link to="/even">Even lib</Link>
+            <Link to="/even">Even lib</Link> PdfView, own and shared tree
           </li>
         </ul>
+        Demo for evaluation and comparison of the bundled and unbundled builds on large 30Mb codebase.
       </nav>
       <Routes>
         <Route

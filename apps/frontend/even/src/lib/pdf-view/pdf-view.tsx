@@ -10,7 +10,7 @@ export function PdfView(props: PdfViewProps) {
     useEffect(() => {
         WebViewer(
             {
-                path: '/pdf',
+                path: './pdf',
                 licenseKey: 'YOUR_LICENSE_KEY',
                 initialDoc:
                     'https://pdftron.s3.amazonaws.com/downloads/pl/demo-annotated.pdf',

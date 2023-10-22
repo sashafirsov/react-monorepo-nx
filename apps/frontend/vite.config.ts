@@ -28,6 +28,7 @@ export const configObj = {
       environment: 'jsdom',
       include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     },
+    base: '',
 };
 
 export default defineConfig(configObj);
