@@ -5,12 +5,14 @@ import { useEffect, useRef } from 'react';
 /* eslint-disable-next-line */
 export interface PdfViewProps {}
 
-export function PdfView(props: PdfViewProps) {
+export function PdfView(_props: PdfViewProps) {
     const viewer = useRef(null);
     useEffect(() => {
         WebViewer(
             {
-                path: './pdf',
+                // due to large size, public/pdf is not cloned into npm and CDN.
+                // Instead, used from source level when run from CDN
+                path: window.location.pathname.includes('dist/')? '../../../apps/frontend/public/pdf' :'./pdf',
                 licenseKey: 'YOUR_LICENSE_KEY',
                 initialDoc:
                     'https://pdftron.s3.amazonaws.com/downloads/pl/demo-annotated.pdf',

@@ -5,7 +5,7 @@
         "clean": "rm -rf apps/frontend/odd/src/lib/lorem_* && rm -rf apps/frontend/even/src/lib/lorem_* && rm -rf shared/src/lib/lorem_*",
         "build": "yarn nx affected --target=build #build only changed",
         "build:frontend": "yarn nx run frontend:build",
-        "build:all": "yarn nx run-many --target=build --all --skip-nx-cache",
+        "build:all": "yarn nx run-many --target=build,unbundle --all",
         "unbundle": "yarn nx run frontend:unbundle:development",
         "test": "yarn nx run-many --target=test --all",
         "test:plugins": "yarn nx run plugins:test --skip-nx-cache",
@@ -22,7 +22,6 @@
         "lorem:even": "yarn nx g lorem-generator lorem frontend-even  --depth=$LOREM_DEPTH --paragraphs=$LOREM_PARAGRAPHS   --text=\"\"",
         "lorem:odd": "yarn nx g lorem-generator lorem frontend-odd  --depth=$LOREM_DEPTH --paragraphs=$LOREM_PARAGRAPHS   --text=\"\""
     },
-    "private": true,
     "dependencies": {
         "@pdftron/webviewer": "^10.4.0",
         "@swc/helpers": "~0.5.2",

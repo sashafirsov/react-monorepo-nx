@@ -9,6 +9,7 @@ lorem*.*
 tmp
 /out-tsc
 
+dist/**/pdf
 # dependencies
 node_modules
 
