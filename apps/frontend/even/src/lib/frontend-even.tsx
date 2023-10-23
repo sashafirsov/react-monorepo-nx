@@ -3,9 +3,9 @@ import { Loading, Shared } from '@rmn/shared';
 import { lazy, Suspense, useState } from 'react';
 
 const PdfView = lazy(() => import('./pdf-view/pdf-view'));
-const Lorem0 = lazy(() => import('./lorem_0/lorem_0'));
-const Lorem1 = lazy(() => import('./lorem_1/lorem_1'));
-const Lorem2 = lazy(() => import('./lorem_2/lorem_2'));
+const Lorem0 = lazy(() => import('./lorem_0/lorem_0frontend-even'));
+const Lorem1 = lazy(() => import('./lorem_1/lorem_1frontend-even'));
+const Lorem2 = lazy(() => import('./lorem_2/lorem_2frontend-even'));
 
 /* eslint-disable-next-line */
 export interface FrontendEvenProps {}

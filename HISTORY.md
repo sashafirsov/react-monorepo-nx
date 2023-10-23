@@ -1,10 +1,11 @@
 # TODO
-* change odd/even js entry files/bundle names
 * tree shaking. Add heavy lib to `odd` with single api call, not a lazy case.
 * linter main command
 * storybook
 
 # DONE
+
+Unbundled build for lorem files + 3 bundles on odd/even/shared 
 
 enable relative paths within CDN deployment
 * HashRouter

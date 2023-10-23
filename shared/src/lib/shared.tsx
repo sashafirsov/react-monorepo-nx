@@ -2,9 +2,9 @@ import styles from './shared.module.scss';
 import { lazy, Suspense, useState } from "react";
 import Loading from "./loading/loading";
 
-const Lorem0 = lazy(() => import('./lorem_0/lorem_0'));
-const Lorem1 = lazy(() => import('./lorem_1/lorem_1'));
-const Lorem2 = lazy(() => import('./lorem_2/lorem_2'));
+const Lorem0 = lazy(() => import('./lorem_0/lorem_0shared'));
+const Lorem1 = lazy(() => import('./lorem_1/lorem_1shared'));
+const Lorem2 = lazy(() => import('./lorem_2/lorem_2shared'));
 
 /* eslint-disable-next-line */
 export interface SharedProps {}
