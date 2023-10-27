@@ -5,8 +5,8 @@ Based on  [Nx](https://nx.dev/) and [ViteJs](https://vitejs.dev/) based monorepo
 
 In this project only React stack is evaluated with the goal of mixing TypeScript and Rust sources and targets.
 # CDN live demo
-* [bundled](https://unpkg.com/@suns/react-monorepo-nx@0.0.3/dist/apps/frontend/index.html)
-* [unbundled](https://unpkg.com/@suns/react-monorepo-nx@0.0.3/dist/apps/frontend-esm/index.html)
+* [bundled](https://unpkg.com/@suns/react-monorepo-nx@0.0.5/dist/apps/frontend/index.html)
+* [unbundled](https://cdn.xml4jquery.com/@suns/react-monorepo-nx@0.0.5/apps/frontend-esm/index.html)
 
 The page immediate dependencies load are meant only for bundle splitting samples.
 
@@ -14,7 +14,7 @@ To see the difference between unbundled and bundled distributions, within the `o
 click on `toggle lorem tree` to trigger the 3Mb of components loaded. 
 
 # Quick start
-    yarn
+    yarn # will take a while as 5K source lorem files generated
     yarn dev # to run in dev mode
     yarn prod # run bundled production build
     yarn esm # run unbundled CDN build

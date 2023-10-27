@@ -1,6 +1,6 @@
 {
     "name": "@suns/react-monorepo-nx",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "scripts": {
         "clean": "rm -rf dist; yarn nx reset ; rm -rf apps/frontend/odd/src/lib/lorem_* && rm -rf apps/frontend/even/src/lib/lorem_* && rm -rf shared/src/lib/lorem_*",
         "build": "yarn nx affected --target=build #build only changed",
