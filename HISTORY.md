@@ -1,9 +1,10 @@
 # TODO
-* tree shaking. Add heavy lib to `odd` with single api call, not a lazy case.
 * linter main command
 * storybook
 
 # DONE
+
+* tree shaking validation. Add heavy lib `lodash` to `odd` with single api call, not a lazy case.
 
 Unbundled build for lorem files + 3 bundles on odd/even/shared 
 
