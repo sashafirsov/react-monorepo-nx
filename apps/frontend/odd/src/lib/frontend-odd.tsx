@@ -1,6 +1,6 @@
 import styles from './frontend-odd.module.scss';
-import { Loading, Shared } from '@rmn/shared';
-import { lazy, Suspense, useState } from 'react';
+import { Shared, ToggleLorem } from "@rmn/shared";
+import { lazy, useState } from 'react';
 import sum from 'lodash-es/sum';
 
 const Lorem0 = lazy(() => import('./lorem_0/lorem_0frontend-odd'));
@@ -11,13 +11,8 @@ const Lorem2 = lazy(() => import('./lorem_2/lorem_2frontend-odd'));
 export interface FrontendOddProps {}
 
 export function FrontendOdd(_props: FrontendOddProps) {
-    const [shownL, setShownL] = useState(false);
     const [numbers, setNumbers] = useState([1, 2]);
-    const [clickedTime, setClickedTime] = useState(0);
-    const RenderedTime = () => {
-        const ms = Date.now() - clickedTime;
-        return <>Loaded in {ms.toLocaleString()} ms </>;
-    };
+
     return (
         <div className={styles['container']}>
             <h1>Welcome to FrontendOdd!</h1>
@@ -49,23 +44,14 @@ export function FrontendOdd(_props: FrontendOddProps) {
                     ADD 10
                 </button>
             </section>
-            <a
-                onClick={() => {
-                    setShownL(!shownL);
-                    setClickedTime(Date.now);
-                }}
-                className="list-item-link"
-            >
-                <h3>Toggle Lorem tree</h3> &nbsp; <i>to test the load timing</i>
-            </a>
-            {shownL && (
-                <Suspense fallback={<Loading />}>
-                    <RenderedTime />
+            <ToggleLorem moduleUrl={import.meta.url} scope='odd' >
+                <>
                     <Lorem0 />
                     <Lorem1 />
                     <Lorem2 />
-                </Suspense>
-            )}
+                </>
+            </ToggleLorem>
+
             <Shared />
         </div>
     );

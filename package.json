@@ -3,10 +3,13 @@
     "version": "0.0.5",
     "scripts": {
         "clean": "rm -rf dist; yarn nx reset ; rm -rf apps/frontend/odd/src/lib/lorem_* && rm -rf apps/frontend/even/src/lib/lorem_* && rm -rf shared/src/lib/lorem_*",
-        "build": "yarn nx affected --target=build #build only changed",
+        "jsondir": "yarn jsondir:bundle; yarn jsondir:esm",
+        "jsondir:bundle": "yarn node tools/jsondir.mjs dist/apps/frontend/assets shared;yarn node tools/jsondir.mjs dist/apps/frontend/assets odd;yarn node tools/jsondir.mjs dist/apps/frontend/assets even",
+        "jsondir:esm": "yarn node tools/jsondir.mjs dist/apps/frontend-esm/assets shared;yarn node tools/jsondir.mjs dist/apps/frontend-esm/assets odd;yarn node tools/jsondir.mjs dist/apps/frontend-esm/assets even",
+        "build": "yarn nx affected --target=build && yarn jsondir:bundle #build only changed",
         "build:frontend": "yarn nx run frontend:build",
-        "build:all": "yarn nx run-many --target=build,unbundle --all",
-        "unbundle": "yarn nx run frontend:unbundle:development",
+        "build:all": "yarn nx run-many --target=build,unbundle --all && yarn jsondir",
+        "unbundle": "yarn nx run frontend:unbundle:development && yarn jsondir:esm",
         "test": "yarn nx run-many --target=test --all",
         "test:plugins": "yarn nx run plugins:test --skip-nx-cache",
         "postinstall": "yarn lorem",
@@ -17,10 +20,10 @@
         "preview:help": "echo run release build and start web server ",
         "prod": "yarn build && cd dist/apps/frontend && npx http-server -o .",
         "esm": "yarn unbundle && cd dist/apps/frontend-esm && npx http-server -o .",
-        "lorem": "yarn clean; [ -z \"$LOREM_DEPTH\" ] && export LOREM_DEPTH=4; [ -z \"$LOREM_PARAGRAPHS\" ] && export LOREM_PARAGRAPHS=20; yarn lorem:shared && yarn lorem:even && yarn lorem:odd",
-        "lorem:shared": "yarn nx g lorem-generator lorem shared --depth=$LOREM_DEPTH --paragraphs=$LOREM_PARAGRAPHS --text=\"\"",
-        "lorem:even": "yarn nx g lorem-generator lorem frontend-even  --depth=$LOREM_DEPTH --paragraphs=$LOREM_PARAGRAPHS   --text=\"\"",
-        "lorem:odd": "yarn nx g lorem-generator lorem frontend-odd  --depth=$LOREM_DEPTH --paragraphs=$LOREM_PARAGRAPHS   --text=\"\""
+        "lorem": "yarn clean; yarn lorem:shared && yarn lorem:even && yarn lorem:odd",
+        "lorem:shared": "[ -z \"$LOREM_DEPTH\" ] && export LOREM_DEPTH=4; [ -z \"$LOREM_PARAGRAPHS\" ] && export LOREM_PARAGRAPHS=10; yarn nx g lorem-generator lorem shared --depth=$LOREM_DEPTH --paragraphs=$LOREM_PARAGRAPHS --text=\"\"; yarn node tools/jsondir.mjs shared/src/lib shared",
+        "lorem:even": "[ -z \"$LOREM_DEPTH\" ] && export LOREM_DEPTH=4; [ -z \"$LOREM_PARAGRAPHS\" ] && export LOREM_PARAGRAPHS=20; yarn nx g lorem-generator lorem frontend-even  --depth=$LOREM_DEPTH --paragraphs=$LOREM_PARAGRAPHS   --text=\"\"; yarn node tools/jsondir.mjs apps/frontend/even/src/lib even",
+        "lorem:odd": "[ -z \"$LOREM_DEPTH\" ] && export LOREM_DEPTH=4; [ -z \"$LOREM_PARAGRAPHS\" ] && export LOREM_PARAGRAPHS=40; yarn nx g lorem-generator lorem frontend-odd  --depth=$LOREM_DEPTH --paragraphs=$LOREM_PARAGRAPHS   --text=\"\"; yarn node tools/jsondir.mjs apps/frontend/odd/src/lib odd"
     },
     "dependencies": {
         "@pdftron/webviewer": "^10.4.0",
@@ -29,12 +32,12 @@
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-router-dom": "6.11.2",
-        "tslib": "^2.3.0"
+        "tslib": "^2.3.0",
+        "use-http": "^1.0.28"
     },
     "devDependencies": {
         "@babel/core": "^7.14.5",
         "@babel/preset-react": "^7.14.5",
-        "@types/lodash-es": "^4.17.10",
         "@nx/cypress": "17.0.0",
         "@nx/devkit": "17.0.0",
         "@nx/eslint": "17.0.0",
@@ -53,6 +56,7 @@
         "@testing-library/react": "14.0.0",
         "@types/glob": "^8.1.0",
         "@types/jest": "^29.4.0",
+        "@types/lodash-es": "^4.17.10",
         "@types/node": "18.14.2",
         "@types/react": "18.2.24",
         "@types/react-dom": "18.2.9",
