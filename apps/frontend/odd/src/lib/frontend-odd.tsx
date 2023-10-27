@@ -18,8 +18,8 @@ export function FrontendOdd(_props: FrontendOddProps) {
             <h1>Welcome to FrontendOdd!</h1>
             <section>
                 <code>import  sum  from 'lodash'</code>
-                loads the module from large library. The bundler should be picking
-                only code for <b>sum</b>
+                loads the module from large library. The bundler should be picking{' '}
+                <b>only</b> code for <b>sum</b> so the `odd` module size only few bytes larger of `even`.
                 <table>
                     {numbers.map((n: number,i:number) => (
                         <tr><td>{i}</td><td>{n}</td></tr>
