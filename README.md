@@ -5,8 +5,10 @@ Based on  [Nx](https://nx.dev/) and [ViteJs](https://vitejs.dev/) based monorepo
 
 In this project only React stack is evaluated with the goal of mixing TypeScript and Rust sources and targets.
 # CDN live demo
-* [bundled](https://unpkg.com/@suns/react-monorepo-nx@0.0.5/dist/apps/frontend/index.html)
 * [unbundled](https://cdn.xml4jquery.com/@suns/react-monorepo-nx@0.0.5/apps/frontend-esm/index.html)
+* [bundled](https://cdn.xml4jquery.com/@suns/react-monorepo-nx@0.0.5/apps/frontend/index.html)
+* [unbundled unpkg.com](https://unpkg.com/@suns/react-monorepo-nx@0.0.5/dist/apps/frontend/index.html) - unreliabe
+* [bundled unpkg.com](https://unpkg.com/@suns/react-monorepo-nx@0.0.5/dist/apps/frontend/index.html)
 
 The page immediate dependencies load are meant only for bundle splitting samples.
 
