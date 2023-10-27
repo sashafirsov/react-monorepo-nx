@@ -13,18 +13,32 @@ export interface FrontendEvenProps {}
 export function FrontendEven(_props: FrontendEvenProps) {
     const [shown, setShown] = useState(false);
     const [shownL, setShownL] = useState(false);
+    const [clickedTime, setClickedTime] = useState(0);
+    const RenderedTime = () => {
+        const ms = Date.now() - clickedTime;
+        return <>Loaded in {ms.toLocaleString()} ms </>;
+    };
     return (
-        <div className={styles['container']}>
+        <div className={styles.container}>
             <h1>Welcome to FrontendEven!</h1>
-            <button onClick={() => setShown(!shown)}> Toggle PdfView</button>
+            <a onClick={() => setShown(!shown)} className="list-item-link"> <h3>Toggle PdfView</h3> <i> &nbsp; to load 100Mb dependency</i></a>
             {shown && (
                 <Suspense fallback={<Loading />}>
                     <PdfView />
                 </Suspense>
             )}
-            <button onClick={() => setShownL(!shownL)}> Toggle Lorem tree</button>
+            <a
+                onClick={() => {
+                    setShownL(!shownL);
+                    setClickedTime(Date.now);
+                }}
+                className="list-item-link"
+            >
+                <h3>Toggle Lorem tree</h3> &nbsp; <i>to test the load timing</i>
+            </a>
             {shownL && (
                 <Suspense fallback={<Loading />}>
+                    <RenderedTime />
                     <Lorem0 />
                     <Lorem1 />
                     <Lorem2 />

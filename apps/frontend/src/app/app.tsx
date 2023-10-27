@@ -63,27 +63,17 @@ export function App() {
                 <Route
                     path="/odd"
                     element={
-                        <div>
-                            <Link to="/">
-                                Click here to go back to root page.
-                            </Link>
-                            <Suspense fallback={<Loading />}>
-                                <FrontendOdd />
-                            </Suspense>
-                        </div>
+                        <Suspense fallback={<Loading />}>
+                            <FrontendOdd />
+                        </Suspense>
                     }
                 />
                 <Route
                     path="/even"
                     element={
-                        <div>
-                            <Link to="/">
-                                Click here to go back to root page.
-                            </Link>
-                            <Suspense fallback={<Loading />}>
-                                <FrontendEven />
-                            </Suspense>
-                        </div>
+                        <Suspense fallback={<Loading />}>
+                            <FrontendEven />
+                        </Suspense>
                     }
                 />
             </Routes>
