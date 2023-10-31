@@ -35,6 +35,13 @@ const ret = {
     files: filtered.length,
     totalSize,
     average: Math.ceil(totalSize / filtered.length),
+    modules: filtered.map(f=>f.path
+        .replace('apps/frontend/odd/src/lib/','')
+        .replace('apps/frontend/even/src/lib/','')
+        .replace('shared/src/lib/','')
+        .replace('dist/apps/frontend-esm/assets/','')
+        .replace('dist/apps/frontend/assets/',''))
+        .sort((a,b)=>b.length-a.length),
     LOREM_DEPTH: process.env.LOREM_DEPTH,
     LOREM_PARAGRAPHS: process.env.LOREM_PARAGRAPHS
 };
