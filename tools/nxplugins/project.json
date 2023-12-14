@@ -38,29 +38,16 @@
         },
         "lint": {
             "executor": "@nx/eslint:lint",
-            "outputs": ["{options.outputFile}"],
-            "options": {
-                "lintFilePatterns": [
-                    "tools/nxplugins/**/*.ts",
-                    "tools/nxplugins/package.json",
-                    "tools/nxplugins/generators.json"
-                ]
-            }
+            "outputs": ["{options.outputFile}"]
         },
         "test": {
             "executor": "@nx/jest:jest",
             "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
             "options": {
-                "jestConfig": "tools/nxplugins/jest.config.ts",
-                "passWithNoTests": true
-            },
-            "configurations": {
-                "ci": {
-                    "ci": true,
-                    "codeCoverage": true
-                }
+                "jestConfig": "tools/nxplugins/jest.config.ts"
             }
         }
     },
-    "tags": []
+    "tags": [],
+    "type": "module"
 }

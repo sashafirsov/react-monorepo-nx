@@ -1,8 +1,9 @@
-import { defineConfig, UserConfigExport } from "vite";
+import { defineConfig, UserConfigExport } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
-export const configObj:  UserConfigExport = {
+export const configObj: UserConfigExport = {
+    root: __dirname,
     cacheDir: '../../node_modules/.vite/frontend',
 
     server: {
@@ -26,6 +27,9 @@ export const configObj:  UserConfigExport = {
     //  plugins: [ nxViteTsPaths() ],
     // },
     build: {
+        outDir: '../../dist/apps/frontend',
+        reportCompressedSize: true,
+        commonjsOptions: { transformMixedEsModules: true },
         rollupOptions: {
             output: {
                 format: 'es',
@@ -41,6 +45,11 @@ export const configObj:  UserConfigExport = {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     test: {
+        reporters: ['default'],
+        coverage: {
+            reportsDirectory: '../../coverage/apps/frontend',
+            provider: 'v8',
+        },
         globals: true,
         cache: { dir: '../../node_modules/.vitest' },
         environment: 'jsdom',

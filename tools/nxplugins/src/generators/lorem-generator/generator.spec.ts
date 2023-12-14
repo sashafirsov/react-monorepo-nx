@@ -8,7 +8,7 @@ import { LoremGeneratorGeneratorSchema } from './schema';
 
 describe('lorem-generator generator', () => {
     let tree: Tree;
-    const options: LoremGeneratorGeneratorSchema = { name: 'test', project:'test-lib', text:'' };
+    const options: LoremGeneratorGeneratorSchema = { name: 'test', project:'test-lib', text:'', depth: 2, paragraphs:3 };
 
     beforeEach(() => {
         tree = createTreeWithEmptyWorkspace();
