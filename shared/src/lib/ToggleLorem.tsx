@@ -1,7 +1,5 @@
 import { ReactNode, Suspense, useEffect, useState } from 'react';
-import useFetch from 'use-http';
 import Loading from './loading/loading';
-import { set } from 'lodash-es';
 
 /* eslint-disable-next-line */
 export interface ToggleLoremProps {
